@@ -2,9 +2,8 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>soal anak sd🤪</title>
+  <title> soal anak sd 🔥</title>
   <style>
-    /* Reset & Base */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -12,34 +11,30 @@
     }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d;
+      background: #0b0b0b;
       color: #fff;
-      line-height: 1.6;
     }
 
-    /* Header */
     header {
       text-align: center;
       padding: 40px 20px;
-      background: linear-gradient(135deg, #00ffc3, #007c7c);
-      box-shadow: 0 0 20px #00ffc3;
+      background: linear-gradient(135deg, #ff1a1a, #990000);
+      box-shadow: 0 0 20px #ff1a1a;
     }
 
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      color: #0d0d0d;
-      text-shadow: 0 0 5px white;
+      font-size: 2.4em;
+      color: #fff;
+      text-shadow: 0 0 5px #ff9999;
     }
 
     header p {
-      font-size: 1em;
+      margin-top: 10px;
       max-width: 600px;
-      margin: 0 auto;
-      color: #1a1a1a;
+      margin-inline: auto;
+      color: #ffd6d6;
     }
 
-    /* Quiz container */
     #quiz {
       max-width: 700px;
       margin: 40px auto;
@@ -52,15 +47,15 @@
       padding: 18px 22px;
       border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 0 12px #00ffc3;
+      box-shadow: 0 0 12px #ff1a1a;
       transition: all 0.3s ease;
-      animation: fadeSlide 0.5s ease forwards;
+      animation: slideIn 0.6s ease forwards;
     }
 
     .question:hover {
       transform: scale(1.02);
-      background: #222;
-      box-shadow: 0 0 18px #00ffc3;
+      background: #2a2a2a;
+      box-shadow: 0 0 20px #ff1a1a;
     }
 
     .options {
@@ -81,14 +76,14 @@
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
-      animation: fadeSlide 0.4s ease forwards;
+      animation: fadeIn 0.4s ease forwards;
     }
 
     .option:hover {
-      background: #00ffc3;
-      color: #0d0d0d;
+      background: #ff1a1a;
+      color: #fff;
       transform: scale(1.05);
-      box-shadow: 0 0 12px #00ffc3;
+      box-shadow: 0 0 10px #ff1a1a;
     }
 
     footer {
@@ -96,31 +91,49 @@
       margin: 60px 0 30px;
     }
 
-    /* Animations */
-    @keyframes fadeSlide {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    #result {
+      text-align: center;
+      font-size: 1.3em;
+      margin-top: 40px;
+      background: #220000;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff1a1a;
+      display: none;
+      animation: popIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🤣 Tebak-Tebakan Web3</h1>
-    <p>Web3 itu canggih, tapi bisa juga kocak. Yuk jawab tebakan gokil tentang dunia blockchain!</p>
+    <h1>🔥 Tebak-Tebakan Web3</h1>
+    <p>Awas ketawa! Tapi siapa tahu kamu jadi makin paham Web3 😎</p>
   </header>
 
   <div id="quiz"></div>
 
+  <div id="result"></div>
+
   <footer>
-    <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/shahrad-shegerf/poison&color=%2300ffc3&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false">
+    <iframe width="100%" height="100" scrolling="no" frameborder="no"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/kodoksakti/gokil"
+      allow="autoplay">
     </iframe>
   </footer>
 
@@ -129,45 +142,139 @@
       {
         q: "1. Apa itu Web3?",
         options: [
-          "Aplikasi buat nyari jodoh di Metaverse",
-          "Tempat nongkrong para crypto kids",
-          "Versi internet yang nggak dikuasai Om Google"
+          "Tempat orang mining sambil ngopi",
+          "Versi baru dari internet yang lebih desentral",
+          "Grup WA isinya trader semua"
         ],
-        funnyResponses: [
-          "💘 Waduh, swipe left dong kalo lagging di blockchain!",
-          "🧢 Anak-anak nongki sambil nambang bitcoin ya?",
-          "🔥 Betul! Tapi hati-hati, tetap bisa diawasi mantan."
+        responses: [
+          "☕ Nambang sambil santai, asik juga.",
+          "💡 Betul! Internet tanpa bos besar.",
+          "📈 Penuh sinyal tapi tetap zonk."
         ]
       },
       {
         q: "2. NFT itu apa sih?",
         options: [
-          "Nasi Free Topping (NFT) ayam geprek",
-          "Gambar gorila yang bikin orang tajir",
-          "Koleksi digital yang bisa dipamerin doang"
+          "Nasi Free Topping",
+          "Gambar digital yang punya sertifikat unik",
+          "Token buat tuker pulsa"
         ],
-        funnyResponses: [
-          "🍗 Enak sih, tapi sayangnya nggak bisa dijual di OpenSea.",
-          "🦍 Iya tuh, padahal isinya cuma JPEG doang.",
-          "🎨 Persis! Pamer doang, untungnya belum tentu."
+        responses: [
+          "🍛 Nambah ayam tapi gak bisa dijual di OpenSea.",
+          "🎨 Yap, kayak Mona Lisa tapi digital.",
+          "📱 Kayaknya beda blockchain deh."
         ]
       },
       {
         q: "3. Smart contract itu siapa?",
         options: [
-          "Kontrak kerjaan yang ditulis pake bahasa alien",
-          "Janji suci antara dua dompet crypto",
-          "Kode sakti yang nggak bisa di-ghosting"
+          "Kode yang bisa nyuruh transaksi otomatis",
+          "Kontrak yang ngerti perasaan",
+          "Robot pengacara dari masa depan"
         ],
-        funnyResponses: [
-          "👽 Ethereum bener-bener alien-friendly ya!",
-          "🤝 Dompet kanan dan kiri berjodoh selamanya.",
-          "💔 Kode ini setia. Nggak kayak kamu."
+        responses: [
+          "🤖 Tepat! Tanpa pengacara pun bisa beres.",
+          "💔 Duh... yang ini aja kadang nge-lag.",
+          "🔮 Gak segitunya juga, bro."
+        ]
+      },
+      {
+        q: "4. Gas fee itu apa?",
+        options: [
+          "Biaya ke pom bensin digital",
+          "Biaya transaksi di blockchain",
+          "Tips buat miner biar cepat respon"
+        ],
+        responses: [
+          "⛽ Bisa jadi, tapi jangan dihirup ya.",
+          "✅ Yes! Kadang mahalnya kayak parkir mall.",
+          "💸 Lumayan, biar cepet di-approve."
+        ]
+      },
+      {
+        q: "5. DAO itu apa?",
+        options: [
+          "Komunitas tanpa bos",
+          "Aplikasi edit foto",
+          "Organisasi rahasia crypto"
+        ],
+        responses: [
+          "👥 Betul! Semua voting, gak ada atasan.",
+          "📸 Yang ini edit keuangan bro.",
+          "🕵️ Ada benernya juga sih."
+        ]
+      },
+      {
+        q: "6. Blockchain itu kayak apa sih?",
+        options: [
+          "Rantai informasi yang susah diubah",
+          "Paket internet unlimited",
+          "Dompet koin fisik"
+        ],
+        responses: [
+          "🔗 Ya! Kayak buku kas digital yang gak bisa dihapus.",
+          "📶 Mungkin kalau internetnya Web3.",
+          "💰 Itu mah celengan bro."
+        ]
+      },
+      {
+        q: "7. Mining itu kerja apa?",
+        options: [
+          "Nambang uang di internet",
+          "Cari emas di YouTube",
+          "Ngoding sambil buka tambang"
+        ],
+        responses: [
+          "💻 Tepat! Tapi tagihan listrik ikut nambang juga.",
+          "📺 Salah channel kayaknya.",
+          "👷‍♂️ Bisa jadi profesi baru!"
+        ]
+      },
+      {
+        q: "8. Wallet crypto itu bisa ilang?",
+        options: [
+          "Bisa banget kalau lupa password",
+          "Enggak dong, pasti ketemu lagi",
+          "Bisa ilang kayak mantan"
+        ],
+        responses: [
+          "🔐 Iya! Hati-hati sama recovery phrase.",
+          "🙃 Naif banget yaa...",
+          "💔 Kenangan pun gak bisa di-recover."
+        ]
+      },
+      {
+        q: "9. Web3 bisa dipake ngapain?",
+        options: [
+          "Main game, transaksi, voting digital",
+          "Nonton drama korea",
+          "Masak nasi goreng"
+        ],
+        responses: [
+          "🎮 Betul! Tapi jangan lupa gas fee.",
+          "📺 Bisa sih... tapi bukan inti Web3-nya.",
+          "🍳 Masaknya tetap di dapur, bukan blockchain."
+        ]
+      },
+      {
+        q: "10. Token itu apa?",
+        options: [
+          "Uang digital di blockchain",
+          "Koin mainan",
+          "Password admin"
+        ],
+        responses: [
+          "💸 Betul banget, bisa dipakai buat beli NFT.",
+          "🪙 Koin mainan tapi bisa bikin kaya.",
+          "🔑 Waduh, ini hacker friendly banget."
         ]
       }
     ];
 
-    const quizContainer = document.getElementById("quiz");
+    const quiz = document.getElementById("quiz");
+    const resultBox = document.getElementById("result");
+
+    let answered = 0;
 
     questions.forEach((item, index) => {
       const qDiv = document.createElement("div");
@@ -181,10 +288,21 @@
         const o = document.createElement("div");
         o.className = "option";
         o.innerText = opt;
+
         o.onclick = (e) => {
           e.stopPropagation();
-          alert(item.funnyResponses[i]);
+          alert(item.responses[i]);
+          if (!optDiv.classList.contains("answered")) {
+            answered++;
+            optDiv.classList.add("answered");
+          }
+
+          if (answered === questions.length) {
+            resultBox.style.display = "block";
+            resultBox.innerHTML = `<strong>Keren! Kamu udah jawab semua ${answered} pertanyaan. Blockchain pun salut. 🚀</strong>`;
+          }
         };
+
         optDiv.appendChild(o);
       });
 
@@ -192,8 +310,8 @@
         optDiv.classList.toggle("show");
       };
 
-      quizContainer.appendChild(qDiv);
-      quizContainer.appendChild(optDiv);
+      quiz.appendChild(qDiv);
+      quiz.appendChild(optDiv);
     });
   </script>
 
