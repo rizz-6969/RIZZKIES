@@ -2,57 +2,71 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>anak sd ajaa bisa jawab masa kamu ngak🤪</title>
+  <title>soal anak sd🤪</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #121212;
-      color: white;
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+    }
 
+    /* Header */
     header {
       text-align: center;
-      padding: 30px 20px;
-      background: linear-gradient(135deg, #00ffd0, #008f8c);
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #00ffc3, #007c7c);
+      box-shadow: 0 0 20px #00ffc3;
     }
 
     header h1 {
-      font-size: 2em;
-      margin-bottom: 0.3em;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #0d0d0d;
+      text-shadow: 0 0 5px white;
     }
 
     header p {
-      font-size: 0.95em;
+      font-size: 1em;
       max-width: 600px;
       margin: 0 auto;
+      color: #1a1a1a;
     }
 
+    /* Quiz container */
     #quiz {
       max-width: 700px;
-      margin: 30px auto;
-      padding: 10px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .question {
-      background: #1e1e1e;
+      background: #1a1a1a;
       margin: 15px 0;
-      padding: 15px 20px;
+      padding: 18px 22px;
       border-radius: 12px;
       cursor: pointer;
-      transition: background 0.3s;
-      animation: fadeIn 0.6s ease forwards;
+      box-shadow: 0 0 12px #00ffc3;
+      transition: all 0.3s ease;
+      animation: fadeSlide 0.5s ease forwards;
     }
 
     .question:hover {
-      background: #292929;
+      transform: scale(1.02);
+      background: #222;
+      box-shadow: 0 0 18px #00ffc3;
     }
 
     .options {
       overflow: hidden;
       max-height: 0;
-      transition: max-height 0.5s ease;
+      transition: max-height 0.6s ease;
       margin-top: 10px;
     }
 
@@ -61,30 +75,32 @@
     }
 
     .option {
-      background: #333;
-      margin: 5px 0;
-      padding: 10px;
+      background: #292929;
+      margin: 8px 0;
+      padding: 12px;
       border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.2s;
-      animation: fadeIn 0.4s ease forwards;
+      transition: 0.3s;
+      animation: fadeSlide 0.4s ease forwards;
     }
 
     .option:hover {
+      background: #00ffc3;
+      color: #0d0d0d;
       transform: scale(1.05);
-      background: #444;
+      box-shadow: 0 0 12px #00ffc3;
     }
 
     footer {
       text-align: center;
-      margin: 40px 0 20px;
+      margin: 60px 0 30px;
     }
 
-    /* Animasi */
-    @keyframes fadeIn {
+    /* Animations */
+    @keyframes fadeSlide {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
@@ -97,14 +113,14 @@
 
   <header>
     <h1>🤣 Tebak-Tebakan Web3</h1>
-    <p>Web3 adalah generasi ketiga dari teknologi internet, berbasis blockchain, di mana pengguna punya kontrol atas data dan aset digital mereka. Tapi.. bisa juga lucu kalau kita tebak-tebakan soal ini! 😅</p>
+    <p>Web3 itu canggih, tapi bisa juga kocak. Yuk jawab tebakan gokil tentang dunia blockchain!</p>
   </header>
 
   <div id="quiz"></div>
 
   <footer>
     <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/shahrad-shegerf/poison&color=%2300ffd0&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/shahrad-shegerf/poison&color=%2300ffc3&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false">
     </iframe>
   </footer>
 
@@ -147,97 +163,6 @@
           "👽 Ethereum bener-bener alien-friendly ya!",
           "🤝 Dompet kanan dan kiri berjodoh selamanya.",
           "💔 Kode ini setia. Nggak kayak kamu."
-        ]
-      },
-      {
-        q: "4. Gas fee itu apa?",
-        options: [
-          "Biaya isi bensin motor di Metaverse",
-          "Uang pungli buat jalanin transaksi",
-          "Biaya buat 'kentut' digital"
-        ],
-        funnyResponses: [
-          "⛽️ Jangan isi bensin pas ETH lagi mahal!",
-          "💸 Yup, ini pungli legal dari jaringan!",
-          "💨 Kentutnya bisa sampai dompet bolong."
-        ]
-      },
-      {
-        q: "5. DAO itu singkatan dari?",
-        options: [
-          "Dibayar Asal On",
-          "Digital Army of Orang-orang",
-          "Decentralized Awkward Organization"
-        ],
-        funnyResponses: [
-          "💼 Karyawan remote paling rajin.",
-          "🪖 Pasukan NFT bersatu!",
-          "😂 Emang kadang awkward banget rapatnya."
-        ]
-      },
-      {
-        q: "6. Metaverse itu kayak apa sih?",
-        options: [
-          "The Sims tapi bisa utang kripto",
-          "Mall virtual yang nggak bisa jajan cilok",
-          "Tempat kamu bisa nongkrong tanpa mandi"
-        ],
-        funnyResponses: [
-          "🎮 Mainan orang dewasa… tapi dompetnya bocor.",
-          "🛍️ Ciloknya masih versi NFT ya?",
-          "🧼 Iya, wangi digital nggak ketahuan!"
-        ]
-      },
-      {
-        q: "7. Wallet crypto itu bisa ilang?",
-        options: [
-          "Kalau dicuci bareng baju sih bisa",
-          "Kalau lupa password, bye-bye jutaan",
-          "Tergantung, dompetnya kulit asli atau bukan?"
-        ],
-        funnyResponses: [
-          "👕 Jangan dicuci dry clean ya!",
-          "🔒 Password adalah segalanya… dan segalanya bisa hilang!",
-          "🐊 Dompet kulit buaya nggak ngaruh di blockchain!"
-        ]
-      },
-      {
-        q: "8. Mining itu kerja apa?",
-        options: [
-          "Nambang pakai laptop jadul sampe panas",
-          "Nonton chart sambil galau tiap malam",
-          "Cari uang tapi nggak kerja-kerja"
-        ],
-        funnyResponses: [
-          "🔥 Jangan nyalain kipas, nyalain niat!",
-          "📉 Jangan nangis liat candle merah ya!",
-          "🤑 Passive income katanya, realita: nganggur."
-        ]
-      },
-      {
-        q: "9. Web3 bisa dipake ngapain?",
-        options: [
-          "Bikin startup tanpa investor",
-          "Main game sambil dapet koin",
-          "Ngilangin mantan dari dunia nyata"
-        ],
-        funnyResponses: [
-          "🚀 Startup dulu, rugi belakangan!",
-          "🎮 Main game = kerja masa depan!",
-          "💔 Sayangnya mantan masih follow IG kamu."
-        ]
-      },
-      {
-        q: "10. Blockchain itu kayak apa sih?",
-        options: [
-          "Rantai motor tapi versi digital",
-          "Catatan sakti yang nggak bisa dihapus",
-          "Diary online yang bisa dibaca semua orang"
-        ],
-        funnyResponses: [
-          "⛓️ Tapi nggak bisa dipake buat boncengan ya!",
-          "📖 Lebih kuat dari buku nikah!",
-          "🔍 Diary-nya publik, hati-hati nulisnya!"
         ]
       }
     ];
