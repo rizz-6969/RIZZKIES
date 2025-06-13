@@ -112,39 +112,167 @@
 </footer>
 
 <script>
-  const questions = [
-    // ... semua pertanyaan dan respons lucu kamu tadi, tidak berubah ...
-    // Dimasukkan persis seperti di versi sebelumnya
-  ];
+const questions = [
+  {
+    q: "1. Apa itu Web3?",
+    options: [
+      "Aplikasi buat nyari jodoh di Metaverse",
+      "Tempat nongkrong para crypto kids",
+      "Versi internet yang nggak dikuasai Om Google"
+    ],
+    funnyResponses: [
+      "💘 Waduh, swipe left dong kalo lagging di blockchain!",
+      "🧢 Anak-anak nongki sambil nambang bitcoin ya?",
+      "🔥 Betul! Tapi hati-hati, tetap bisa diawasi mantan."
+    ]
+  },
+  {
+    q: "2. NFT itu apa sih?",
+    options: [
+      "Nasi Free Topping (NFT) ayam geprek",
+      "Gambar gorila yang bikin orang tajir",
+      "Koleksi digital yang bisa dipamerin doang"
+    ],
+    funnyResponses: [
+      "🍗 Enak sih, tapi sayangnya nggak bisa dijual di OpenSea.",
+      "🦍 Iya tuh, padahal isinya cuma JPEG doang.",
+      "🎨 Persis! Pamer doang, untungnya belum tentu."
+    ]
+  },
+  {
+    q: "3. Smart contract itu siapa?",
+    options: [
+      "Kontrak kerjaan yang ditulis pake bahasa alien",
+      "Janji suci antara dua dompet crypto",
+      "Kode sakti yang nggak bisa di-ghosting"
+    ],
+    funnyResponses: [
+      "👽 Ethereum bener-bener alien-friendly ya!",
+      "🤝 Dompet kanan dan kiri berjodoh selamanya.",
+      "💔 Kode ini setia. Nggak kayak kamu."
+    ]
+  },
+  {
+    q: "4. Gas fee itu apa?",
+    options: [
+      "Biaya isi bensin motor di Metaverse",
+      "Uang pungli buat jalanin transaksi",
+      "Biaya buat 'kentut' digital"
+    ],
+    funnyResponses: [
+      "⛽️ Jangan isi bensin pas ETH lagi mahal!",
+      "💸 Yup, ini pungli legal dari jaringan!",
+      "💨 Kentutnya bisa sampai dompet bolong."
+    ]
+  },
+  {
+    q: "5. DAO itu singkatan dari?",
+    options: [
+      "Dibayar Asal On",
+      "Digital Army of Orang-orang",
+      "Decentralized Awkward Organization"
+    ],
+    funnyResponses: [
+      "💼 Karyawan remote paling rajin.",
+      "🪖 Pasukan NFT bersatu!",
+      "😂 Emang kadang awkward banget rapatnya."
+    ]
+  },
+  {
+    q: "6. Metaverse itu kayak apa sih?",
+    options: [
+      "The Sims tapi bisa utang kripto",
+      "Mall virtual yang nggak bisa jajan cilok",
+      "Tempat kamu bisa nongkrong tanpa mandi"
+    ],
+    funnyResponses: [
+      "🎮 Mainan orang dewasa… tapi dompetnya bocor.",
+      "🛍️ Ciloknya masih versi NFT ya?",
+      "🧼 Iya, wangi digital nggak ketahuan!"
+    ]
+  },
+  {
+    q: "7. Wallet crypto itu bisa ilang?",
+    options: [
+      "Kalau dicuci bareng baju sih bisa",
+      "Kalau lupa password, bye-bye jutaan",
+      "Tergantung, dompetnya kulit asli atau bukan?"
+    ],
+    funnyResponses: [
+      "👕 Jangan dicuci dry clean ya!",
+      "🔒 Password adalah segalanya… dan segalanya bisa hilang!",
+      "🐊 Dompet kulit buaya nggak ngaruh di blockchain!"
+    ]
+  },
+  {
+    q: "8. Mining itu kerja apa?",
+    options: [
+      "Nambang pakai laptop jadul sampe panas",
+      "Nonton chart sambil galau tiap malam",
+      "Cari uang tapi nggak kerja-kerja"
+    ],
+    funnyResponses: [
+      "🔥 Jangan nyalain kipas, nyalain niat!",
+      "📉 Jangan nangis liat candle merah ya!",
+      "🤑 Passive income katanya, realita: nganggur."
+    ]
+  },
+  {
+    q: "9. Web3 bisa dipake ngapain?",
+    options: [
+      "Bikin startup tanpa investor",
+      "Main game sambil dapet koin",
+      "Ngilangin mantan dari dunia nyata"
+    ],
+    funnyResponses: [
+      "🚀 Startup dulu, rugi belakangan!",
+      "🎮 Main game = kerja masa depan!",
+      "💔 Sayangnya mantan masih follow IG kamu."
+    ]
+  },
+  {
+    q: "10. Blockchain itu kayak apa sih?",
+    options: [
+      "Rantai motor tapi versi digital",
+      "Catatan sakti yang nggak bisa dihapus",
+      "Diary online yang bisa dibaca semua orang"
+    ],
+    funnyResponses: [
+      "⛓️ Tapi nggak bisa dipake buat boncengan ya!",
+      "📖 Lebih kuat dari buku nikah!",
+      "🔍 Diary-nya publik, hati-hati nulisnya!"
+    ]
+  }
+];
 
-  const quizContainer = document.getElementById("quiz");
+const quizContainer = document.getElementById("quiz");
 
-  questions.forEach((item, index) => {
-    const qDiv = document.createElement("div");
-    qDiv.className = "question";
-    qDiv.innerHTML = item.q;
+questions.forEach((item, index) => {
+  const qDiv = document.createElement("div");
+  qDiv.className = "question";
+  qDiv.innerHTML = item.q;
 
-    const optDiv = document.createElement("div");
-    optDiv.className = "options";
+  const optDiv = document.createElement("div");
+  optDiv.className = "options";
 
-    item.options.forEach((opt, i) => {
-      const o = document.createElement("div");
-      o.className = "option";
-      o.innerText = opt;
-      o.onclick = (e) => {
-        e.stopPropagation();
-        alert(item.funnyResponses[i]);
-      };
-      optDiv.appendChild(o);
-    });
-
-    qDiv.onclick = () => {
-      optDiv.style.display = optDiv.style.display === "block" ? "none" : "block";
+  item.options.forEach((opt, i) => {
+    const o = document.createElement("div");
+    o.className = "option";
+    o.innerText = opt;
+    o.onclick = (e) => {
+      e.stopPropagation();
+      alert(item.funnyResponses[i]);
     };
-
-    quizContainer.appendChild(qDiv);
-    quizContainer.appendChild(optDiv);
+    optDiv.appendChild(o);
   });
+
+  qDiv.onclick = () => {
+    optDiv.style.display = optDiv.style.display === "block" ? "none" : "block";
+  };
+
+  quizContainer.appendChild(qDiv);
+  quizContainer.appendChild(optDiv);
+});
 </script>
 
 </body>
