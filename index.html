@@ -1,129 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Web 3 Q&A Slides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q&A Web 3</title>
   <style>
     body {
-      background: #111;
       font-family: Arial, sans-serif;
+      background-color: #121212;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
+      padding: 0;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 50px auto;
+      overflow: hidden;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
     }
 
     .slides {
-      position: relative;
-      width: 90%;
-      max-width: 700px;
-      height: 250px;
-      padding: 20px;
-      background: #222;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-      overflow: hidden;
+      display: flex;
+      width: 3500%;
+      transition: transform 0.6s ease;
     }
 
     .slide {
-      display: none;
-      position: absolute;
       width: 100%;
-      height: 100%;
-      animation: fade 0.5s ease-in-out;
+      padding: 40px;
+      box-sizing: border-box;
+      flex-shrink: 0;
     }
 
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .slide h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .navigation-manual {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .navigation-manual label {
+      cursor: pointer;
+      padding: 5px 10px;
+      background: #444;
+      color: #fff;
+      border-radius: 5px;
+      margin: 2px;
+      display: inline-block;
+      font-size: 0.8rem;
     }
 
     input[type="radio"] {
       display: none;
     }
 
-    /* Aktifkan slide sesuai radio yang dipilih */
-    input#s1:checked ~ .slides #slide1,
-    input#s2:checked ~ .slides #slide2,
-    input#s3:checked ~ .slides #slide3,
-    input#s4:checked ~ .slides #slide4,
-    input#s5:checked ~ .slides #slide5 {
-      display: block;
-    }
-
-    /* Tambah sesuai jumlah slide sampai 35... */
-    /* Ulangi pola di atas jika mau semua 35 slide aktif */
-
-    .nav {
-      margin-top: 15px;
-    }
-
-    .nav label {
-      display: inline-block;
-      width: 14px;
-      height: 14px;
-      margin: 0 4px;
-      border-radius: 50%;
-      background: #555;
-      cursor: pointer;
-    }
-
-    /* Highlight indikator aktif */
-    input#s1:checked ~ .nav label[for="s1"],
-    input#s2:checked ~ .nav label[for="s2"],
-    input#s3:checked ~ .nav label[for="s3"],
-    input#s4:checked ~ .nav label[for="s4"],
-    input#s5:checked ~ .nav label[for="s5"] {
-      background: #0f0;
-    }
+    /* Generate dynamic transform for each slide */
+    ${Array.from({ length: 35 }, (_, i) => `
+      #s${i + 1}:checked ~ .slides {
+        transform: translateX(-${i * 100}%);
+      }
+    `).join('')}
   </style>
 </head>
 <body>
+  <div class="slider">
+    ${Array.from({ length: 35 }, (_, i) => `
+      <input type="radio" name="slider" id="s${i + 1}" ${i === 0 ? "checked" : ""}>
+    `).join('')}
 
-  <!-- 35 input radio (hanya contoh 5 dulu ditampilkan) -->
-  <input type="radio" name="slider" id="s1" checked>
-  <input type="radio" name="slider" id="s2">
-  <input type="radio" name="slider" id="s3">
-  <input type="radio" name="slider" id="s4">
-  <input type="radio" name="slider" id="s5">
+    <div class="slides">
+      ${[
+        "Apa itu Web 3?|Web 3 adalah generasi internet berikutnya yang terdesentralisasi dan memberi pengguna kendali atas data mereka sendiri.",
+        "Apa perbedaan Web 2 dan Web 3?|Web 2 bersifat terpusat dan dikendalikan oleh perusahaan besar, sementara Web 3 terdesentralisasi dan dikontrol komunitas.",
+        "Mengapa Web 3 penting?|Karena Web 3 menawarkan privasi, kepemilikan data, dan ekonomi berbasis token yang adil.",
+        "Apa teknologi utama di balik Web 3?|Blockchain, smart contract, dan kriptografi adalah dasar utama Web 3.",
+        "Siapa yang mengembangkan Web 3?|Web 3 dikembangkan oleh komunitas terbuka, startup blockchain, dan organisasi seperti Ethereum Foundation.",
+        "Apa itu dApps?|dApps (decentralized apps) adalah aplikasi yang berjalan di jaringan blockchain dan tidak dikontrol oleh entitas tunggal.",
+        "Apa fungsi wallet di Web 3?|Wallet digunakan untuk menyimpan aset digital dan mengakses layanan Web 3 secara aman.",
+        "Apa itu Metamask?|Metamask adalah dompet digital populer yang memungkinkan interaksi dengan aplikasi blockchain dari browser.",
+        "Apa itu gas fee?|Gas fee adalah biaya transaksi yang dibayarkan pengguna untuk memproses transaksi di blockchain.",
+        "Blockchain mana yang paling populer untuk Web 3?|Ethereum merupakan blockchain paling umum digunakan untuk pengembangan Web 3 karena dukungan smart contract-nya.",
+        "Apa itu NFT?|NFT adalah aset digital unik yang diverifikasi melalui blockchain, sering digunakan untuk seni, koleksi, dan identitas digital.",
+        "Bagaimana cara kerja staking?|Staking adalah proses menyimpan token dalam jaringan blockchain untuk mendapatkan imbalan dan mendukung keamanan jaringan.",
+        "Apa itu layer 2?|Layer 2 adalah solusi skalabilitas di atas blockchain utama untuk meningkatkan kecepatan dan efisiensi transaksi.",
+        "Apa hubungan Web 3 dan DeFi?|DeFi (Decentralized Finance) adalah bagian dari Web 3 yang menawarkan layanan keuangan tanpa perantara.",
+        "Apa itu yield farming?|Yield farming adalah strategi DeFi untuk memperoleh imbal hasil dengan memindahkan aset antar protokol likuiditas.",
+        "Apa itu governance token?|Governance token memberikan hak suara kepada pemegangnya untuk mengatur keputusan dalam proyek Web 3.",
+        "Apa itu IPFS?|IPFS (InterPlanetary File System) adalah protokol penyimpanan terdistribusi untuk Web 3.",
+        "Apakah Web 3 aman?|Web 3 menawarkan keamanan melalui enkripsi dan desentralisasi, tetapi tetap rentan terhadap eksploitasi kontrak pintar jika tidak ditulis dengan benar.",
+        "Apa tantangan utama Web 3?|Adopsi, skalabilitas, regulasi, dan pengalaman pengguna adalah beberapa tantangan besar Web 3 saat ini.",
+        "Apa itu cross-chain?|Cross-chain mengacu pada interoperabilitas antara blockchain berbeda, memungkinkan pertukaran data dan aset antar jaringan.",
+        "Apa itu bridge?|Bridge memungkinkan pengguna memindahkan aset antar blockchain yang berbeda.",
+        "Apa peran oracles?|Oracles menghubungkan smart contract dengan data dunia nyata yang berada di luar blockchain.",
+        "Apa itu zk-rollups?|zk-rollups adalah teknologi layer 2 yang meningkatkan efisiensi transaksi dengan membungkus transaksi menjadi satu bukti ringkas.",
+        "Bagaimana Web 3 mendukung privasi?|Web 3 menggunakan kriptografi dan kontrol data pribadi untuk meningkatkan privasi pengguna.",
+        "Apa itu decentralization?|Desentralisasi berarti tidak adanya otoritas tunggal yang mengontrol jaringan atau sistem.",
+        "Apa itu tokenomics?|Tokenomics adalah studi tentang ekonomi dari token termasuk suplai, distribusi, dan insentif.",
+        "Apa itu Web3 Foundation?|Web3 Foundation adalah organisasi yang mendukung pengembangan teknologi Web 3, termasuk Polkadot.",
+        "Apa itu consensus mechanism?|Consensus mechanism adalah metode yang digunakan jaringan blockchain untuk menyetujui transaksi baru secara kolektif.",
+        "Apa itu proof of stake?|Proof of stake adalah mekanisme konsensus di mana pemilik token memvalidasi blok berdasarkan kepemilikan mereka.",
+        "Apa itu Web 3 identity?|Web 3 identity adalah identitas digital yang terdesentralisasi dan dapat dikendalikan sepenuhnya oleh pengguna.",
+        "Apa itu DID (Decentralized ID)?|DID memungkinkan pengguna membuat dan mengelola identitas digital tanpa pihak ketiga.",
+        "Bagaimana cara belajar Web 3?|Belajar Web 3 dapat dimulai melalui dokumentasi proyek, forum, dan platform edukasi seperti CryptoZombies atau Coursera.",
+        "Apa itu testnet?|Testnet adalah jaringan uji coba blockchain untuk mengembangkan dan menguji aplikasi sebelum diluncurkan di mainnet.",
+        "Apakah Web 3 legal?|Legalitas Web 3 bergantung pada yurisdiksi. Beberapa negara mengatur aset digital, lainnya belum memiliki regulasi khusus.",
+        "Masa depan Web 3?|Masa depan Web 3 mengarah pada dunia digital yang lebih transparan, terbuka, dan dimiliki oleh komunitas."
+      ].map((qa, i) => {
+        const [q, a] = qa.split("|");
+        return `<div class="slide" id="slide${i + 1}"><h2>${i + 1}. ${q}</h2><p>${a}</p></div>`;
+      }).join('')}
+    </div>
 
-  <!-- Wrapper slides -->
-  <div class="slides">
-    <div class="slide" id="slide1">
-      <h2>1. Apa itu Web 3?</h2>
-      <p>Web 3 adalah generasi internet berbasis blockchain yang mendukung desentralisasi dan kepemilikan data oleh pengguna.</p>
+    <div class="navigation-manual">
+      ${Array.from({ length: 35 }, (_, i) => `
+        <label for="s${i + 1}">${i + 1}</label>
+      `).join('')}
     </div>
-    <div class="slide" id="slide2">
-      <h2>2. Apa keunggulan Web 3 dibanding Web 2?</h2>
-      <p>Pengguna Web 3 memiliki kontrol penuh atas data mereka dan tidak tergantung pada platform terpusat.</p>
-    </div>
-    <div class="slide" id="slide3">
-      <h2>3. Apa itu smart contract?</h2>
-      <p>Smart contract adalah kode yang berjalan otomatis di blockchain untuk mengeksekusi kesepakatan tanpa perantara.</p>
-    </div>
-    <div class="slide" id="slide4">
-      <h2>4. Apa peran token di Web 3?</h2>
-      <p>Token digunakan untuk insentif, akses layanan, dan tata kelola dalam ekosistem Web 3.</p>
-    </div>
-    <div class="slide" id="slide5">
-      <h2>5. Apa itu DAO?</h2>
-      <p>DAO (Decentralized Autonomous Organization) adalah organisasi yang dikelola oleh kode dan komunitas melalui voting berbasis token.</p>
-    </div>
-    <!-- Tambahkan hingga #slide35 sesuai kebutuhan -->
   </div>
-
-  <!-- Navigasi slide -->
-  <div class="nav">
-    <label for="s1"></label>
-    <label for="s2"></label>
-    <label for="s3"></label>
-    <label for="s4"></label>
-    <label for="s5"></label>
-    <!-- Tambahkan hingga s35 jika semua mau dibuat -->
-  </div>
-
 </body>
+</html>
+
 </html>
