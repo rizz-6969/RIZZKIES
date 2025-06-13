@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Web3 Tapi Lucu 🔥</title>
+  <title>Soal anak sd</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -100,7 +100,7 @@
       to { opacity: 1; transform: translate(-50%, -50%); }
     }
 
-    /* Footer style */
+    /* Footer */
     footer {
       margin-top: 60px;
       text-align: center;
@@ -112,8 +112,6 @@
 <h1>🔥 Tebak-Tebakan Web3 Tapi Lucu 🔥</h1>
 <div id="quiz"></div>
 <div class="result" id="result"></div>
-
-<!-- 🎉 Notifikasi di tengah -->
 <div id="notif">🎉 Kamu sudah menjawab semua pertanyaan!</div>
 
 <!-- 🔊 Footer SoundCloud -->
@@ -124,8 +122,269 @@
 </footer>
 
 <script>
-  const questions = [/* ... 20 pertanyaan tetap di sini, tidak diubah ... */];
-  
+  const questions = [
+    {
+      q: "1. Apa itu Web3?",
+      options: [
+        "Aplikasi buat nyari jodoh di Metaverse",
+        "Tempat nongkrong para crypto kids",
+        "Versi internet yang nggak dikuasai Om Google"
+      ],
+      responses: [
+        "💘 Waduh, swipe left dong kalo lagging di blockchain!",
+        "🧢 Anak-anak nongki sambil nambang bitcoin ya?",
+        "🔥 Betul! Tapi hati-hati, tetap bisa diawasi mantan."
+      ]
+    },
+    {
+      q: "2. NFT itu apa sih?",
+      options: [
+        "Nasi Free Topping (NFT) ayam geprek",
+        "Gambar gorila yang bikin orang tajir",
+        "Koleksi digital yang bisa dipamerin doang"
+      ],
+      responses: [
+        "🍗 Enak sih, tapi sayangnya nggak bisa dijual di OpenSea.",
+        "🦍 Iya tuh, padahal isinya cuma JPEG doang.",
+        "🎨 Persis! Pamer doang, untungnya belum tentu."
+      ]
+    },
+    {
+      q: "3. Smart contract itu siapa?",
+      options: [
+        "Kontrak kerjaan yang ditulis pake bahasa alien",
+        "Janji suci antara dua dompet crypto",
+        "Kode sakti yang nggak bisa di-ghosting"
+      ],
+      responses: [
+        "👽 Ethereum bener-bener alien-friendly ya!",
+        "🤝 Dompet kanan dan kiri berjodoh selamanya.",
+        "💔 Kode ini setia. Nggak kayak kamu."
+      ]
+    },
+    {
+      q: "4. Gas fee itu apa?",
+      options: [
+        "Biaya isi bensin motor di Metaverse",
+        "Uang pungli buat jalanin transaksi",
+        "Biaya buat 'kentut' digital"
+      ],
+      responses: [
+        "⛽️ Jangan isi bensin pas ETH lagi mahal!",
+        "💸 Yup, ini pungli legal dari jaringan!",
+        "💨 Kentutnya bisa sampai dompet bolong."
+      ]
+    },
+    {
+      q: "5. DAO itu singkatan dari?",
+      options: [
+        "Dibayar Asal On",
+        "Digital Army of Orang-orang",
+        "Decentralized Awkward Organization"
+      ],
+      responses: [
+        "💼 Karyawan remote paling rajin.",
+        "🪖 Pasukan NFT bersatu!",
+        "😂 Emang kadang awkward banget rapatnya."
+      ]
+    },
+    {
+      q: "6. Metaverse itu kayak apa sih?",
+      options: [
+        "The Sims tapi bisa utang kripto",
+        "Mall virtual yang nggak bisa jajan cilok",
+        "Tempat kamu bisa nongkrong tanpa mandi"
+      ],
+      responses: [
+        "🎮 Mainan orang dewasa… tapi dompetnya bocor.",
+        "🛍️ Ciloknya masih versi NFT ya?",
+        "🧼 Iya, wangi digital nggak ketahuan!"
+      ]
+    },
+    {
+      q: "7. Wallet crypto itu bisa ilang?",
+      options: [
+        "Kalau dicuci bareng baju sih bisa",
+        "Kalau lupa password, bye-bye jutaan",
+        "Tergantung, dompetnya kulit asli atau bukan?"
+      ],
+      responses: [
+        "👕 Jangan dicuci dry clean ya!",
+        "🔒 Password adalah segalanya… dan segalanya bisa hilang!",
+        "🐊 Dompet kulit buaya nggak ngaruh di blockchain!"
+      ]
+    },
+    {
+      q: "8. Mining itu kerja apa?",
+      options: [
+        "Nambang pakai laptop jadul sampe panas",
+        "Nonton chart sambil galau tiap malam",
+        "Cari uang tapi nggak kerja-kerja"
+      ],
+      responses: [
+        "🔥 Jangan nyalain kipas, nyalain niat!",
+        "📉 Jangan nangis liat candle merah ya!",
+        "🤑 Passive income katanya, realita: nganggur."
+      ]
+    },
+    {
+      q: "9. Web3 bisa dipake ngapain?",
+      options: [
+        "Bikin startup tanpa investor",
+        "Main game sambil dapet koin",
+        "Ngilangin mantan dari dunia nyata"
+      ],
+      responses: [
+        "🚀 Startup dulu, rugi belakangan!",
+        "🎮 Main game = kerja masa depan!",
+        "💔 Sayangnya mantan masih follow IG kamu."
+      ]
+    },
+    {
+      q: "10. Blockchain itu kayak apa sih?",
+      options: [
+        "Rantai motor tapi versi digital",
+        "Catatan sakti yang nggak bisa dihapus",
+        "Diary online yang bisa dibaca semua orang"
+      ],
+      responses: [
+        "⛓️ Tapi nggak bisa dipake buat boncengan ya!",
+        "📖 Lebih kuat dari buku nikah!",
+        "🔍 Diary-nya publik, hati-hati nulisnya!"
+      ]
+    },
+    {
+      q: "11. Apa itu private key?",
+      options: [
+        "Kunci motor pribadi",
+        "Kunci rahasia dompet crypto",
+        "Password WiFi tetangga"
+      ],
+      responses: [
+        "🛵 Cocok buat narik ojol Web3.",
+        "🔐 Tepat! Jangan sampai bocor.",
+        "📡 Bisa connect tapi bukan itu maksudnya."
+      ]
+    },
+    {
+      q: "12. Ethereum itu apa?",
+      options: [
+        "Bahan bakar mobil masa depan",
+        "Platform blockchain populer",
+        "Nama alien di film Marvel"
+      ],
+      responses: [
+        "🚗 Bukan, itu Elon yang urus.",
+        "✅ Yes! Salah satu pionir smart contract.",
+        "👽 Aliennya bawa NFT?"
+      ]
+    },
+    {
+      q: "13. Apa itu staking?",
+      options: [
+        "Taruhan kripto kayak judi",
+        "Menyimpan token untuk dapat imbalan",
+        "Masak steak di dapur blockchain"
+      ],
+      responses: [
+        "🎰 Waduh, ini bukan kasino bro.",
+        "💰 Betul! Dapat cuan sambil santuy.",
+        "🥩 Steaknya medium rare dong."
+      ]
+    },
+    {
+      q: "14. Apa itu Metamask?",
+      options: [
+        "Topeng untuk pesta kripto",
+        "Dompet digital buat Web3",
+        "Filter Instagram terbaru"
+      ],
+      responses: [
+        "🎭 Keren sih, tapi bukan buat party.",
+        "🦊 Yes! Dompet favorit sejuta crypto user.",
+        "📱 Itu meta banget."
+      ]
+    },
+    {
+      q: "15. Apa itu airdrop?",
+      options: [
+        "Ngirim barang pakai drone",
+        "Distribusi token gratis",
+        "Fitur Bluetooth versi blockchain"
+      ],
+      responses: [
+        "🚁 Beda dunia bro.",
+        "🎁 Betul! Siapa yang gak suka gratisan?",
+        "📲 Udah lama ditinggal iPhone."
+      ]
+    },
+    {
+      q: "16. Apa yang terjadi saat pasar kripto merah?",
+      options: [
+        "Semua orang panik jual",
+        "Diskon besar-besaran",
+        "Market ngambek pengen peluk"
+      ],
+      responses: [
+        "😱 Panic selling everywhere!",
+        "🛒 Buy the dip katanya...",
+        "🥹 Cuddle dulu baru trading."
+      ]
+    },
+    {
+      q: "17. Apa itu rug pull?",
+      options: [
+        "Tarik karpet pas lagi tidur",
+        "Penipuan proyek kripto",
+        "Trik sulap blockchain"
+      ],
+      responses: [
+        "🧼 Kena prank domestik.",
+        "⚠️ Hati-hati, bisa hilang semua.",
+        "🎩 Sayangnya bukan hiburan."
+      ]
+    },
+    {
+      q: "18. DAO bisa ngapain aja?",
+      options: [
+        "Bikin keputusan bersama",
+        "Masak bareng lewat blockchain",
+        "Nonton bola online rame-rame"
+      ],
+      responses: [
+        "📊 Betul! Voting tanpa bos.",
+        "🍳 Kalo masak sambil voting bisa sih.",
+        "⚽ Niat banget..."
+      ]
+    },
+    {
+      q: "19. Token meme itu apa?",
+      options: [
+        "Uang lucu-lucuan di kripto",
+        "Stiker lucu buat WhatsApp",
+        "Token mainan dari Taman Pintar"
+      ],
+      responses: [
+        "🤣 Kadang lucu, kadang mahal!",
+        "📲 Salah aplikasi bro.",
+        "🎡 Nostalgia masa kecil."
+      ]
+    },
+    {
+      q: "20. Apa itu Web5?",
+      options: [
+        "Web3 + Web2 biar genap",
+        "Project fiktif bercanda",
+        "Visi masa depan internet"
+      ],
+      responses: [
+        "➕ Matematika kamu jago.",
+        "😆 Bisa jadi jokes, bisa jadi serius.",
+        "🚀 Yuk siap-siap dari sekarang."
+      ]
+    }
+  ];
+
   const quizContainer = document.getElementById("quiz");
   const resultContainer = document.getElementById("result");
   const notif = document.getElementById("notif");
@@ -144,10 +403,10 @@
       o.className = "option";
       o.innerText = opt;
       o.onclick = () => {
-        alert(item.responses[i]); // tetap pakai alert untuk tiap jawaban
+        alert(item.responses[i]); // tetap pakai alert
         totalAnswered++;
         if (totalAnswered === questions.length) {
-          notif.style.display = "block"; // tampilkan notifikasi di tengah
+          notif.style.display = "block"; // munculkan notifikasi di tengah
         }
       };
       optDiv.appendChild(o);
