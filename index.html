@@ -5,133 +5,125 @@
   <title>Web 3 Q&A Slides</title>
   <style>
     body {
-      font-family: sans-serif;
       background: #111;
+      font-family: Arial, sans-serif;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      overflow: hidden;
       margin: 0;
     }
 
-    .slider {
-      position: relative;
-      width: 80%;
-      max-width: 800px;
-      height: 300px;
-      overflow: hidden;
-      border-radius: 15px;
-      background: #222;
-      box-shadow: 0 0 20px rgba(255,255,255,0.1);
-    }
-
     .slides {
-      display: flex;
-      width: 3500%; /* 35 slides */
-      transition: transform 0.6s ease-in-out;
+      position: relative;
+      width: 90%;
+      max-width: 700px;
+      height: 250px;
+      padding: 20px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
     }
 
     .slide {
-      flex: 0 0 100%;
-      padding: 2rem;
-      box-sizing: border-box;
-      text-align: center;
-      opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: fade 0.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     input[type="radio"] {
       display: none;
     }
 
+    /* Aktifkan slide sesuai radio yang dipilih */
+    input#s1:checked ~ .slides #slide1,
+    input#s2:checked ~ .slides #slide2,
+    input#s3:checked ~ .slides #slide3,
+    input#s4:checked ~ .slides #slide4,
+    input#s5:checked ~ .slides #slide5 {
+      display: block;
+    }
+
+    /* Tambah sesuai jumlah slide sampai 35... */
+    /* Ulangi pola di atas jika mau semua 35 slide aktif */
+
     .nav {
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     .nav label {
       display: inline-block;
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
+      margin: 0 4px;
       border-radius: 50%;
       background: #555;
-      margin: 5px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
 
-    input:checked ~ .slider .slides {
-      transform: translateX(calc(var(--i) * -100%));
-    }
-
-    input:checked ~ .slider .slide:nth-of-type(var(--i)) {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Make only active slide visible */
-    input:nth-of-type(1):checked ~ .slider .slide:nth-of-type(1),
-    input:nth-of-type(2):checked ~ .slider .slide:nth-of-type(2),
-    input:nth-of-type(3):checked ~ .slider .slide:nth-of-type(3),
-    /* ... add until 35 */
-    input:nth-of-type(35):checked ~ .slider .slide:nth-of-type(35) {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    input:checked + label {
+    /* Highlight indikator aktif */
+    input#s1:checked ~ .nav label[for="s1"],
+    input#s2:checked ~ .nav label[for="s2"],
+    input#s3:checked ~ .nav label[for="s3"],
+    input#s4:checked ~ .nav label[for="s4"],
+    input#s5:checked ~ .nav label[for="s5"] {
       background: #0f0;
     }
   </style>
 </head>
 <body>
 
-<!-- Generate 35 radio buttons -->
-<form>
-  <!-- Radio buttons with manual index-based CSS handling -->
-  <!-- You may automate this with a script or preprocessor in production -->
+  <!-- 35 input radio (hanya contoh 5 dulu ditampilkan) -->
+  <input type="radio" name="slider" id="s1" checked>
+  <input type="radio" name="slider" id="s2">
+  <input type="radio" name="slider" id="s3">
+  <input type="radio" name="slider" id="s4">
+  <input type="radio" name="slider" id="s5">
 
-  <!-- 35 Inputs -->
-  <!-- We'll just show 3 for demo, you can continue the rest similarly -->
-  <input type="radio" name="slider" id="s1" checked style="--i:0">
-  <input type="radio" name="slider" id="s2" style="--i:1">
-  <input type="radio" name="slider" id="s3" style="--i:2">
-  <!-- ... up to 35 -->
-  <input type="radio" name="slider" id="s35" style="--i:34">
-
-  <div class="slider">
-    <div class="slides">
-      <!-- Slide 1 -->
-      <div class="slide">
-        <h2>1. Apa itu Web 3?</h2>
-        <p>Web 3 adalah evolusi internet yang berbasis teknologi blockchain, memungkinkan kontrol data oleh pengguna.</p>
-      </div>
-      <!-- Slide 2 -->
-      <div class="slide">
-        <h2>2. Apa perbedaan Web 2 dan Web 3?</h2>
-        <p>Web 2 dikendalikan oleh platform besar, sedangkan Web 3 lebih terdesentralisasi dan memberi pengguna kendali atas data mereka.</p>
-      </div>
-      <!-- Slide 3 -->
-      <div class="slide">
-        <h2>3. Apa itu blockchain dalam konteks Web 3?</h2>
-        <p>Blockchain adalah teknologi inti Web 3 yang menyimpan data secara aman, transparan, dan terdistribusi.</p>
-      </div>
-      <!-- ... Tambahkan hingga 35 slide -->
+  <!-- Wrapper slides -->
+  <div class="slides">
+    <div class="slide" id="slide1">
+      <h2>1. Apa itu Web 3?</h2>
+      <p>Web 3 adalah generasi internet berbasis blockchain yang mendukung desentralisasi dan kepemilikan data oleh pengguna.</p>
     </div>
+    <div class="slide" id="slide2">
+      <h2>2. Apa keunggulan Web 3 dibanding Web 2?</h2>
+      <p>Pengguna Web 3 memiliki kontrol penuh atas data mereka dan tidak tergantung pada platform terpusat.</p>
+    </div>
+    <div class="slide" id="slide3">
+      <h2>3. Apa itu smart contract?</h2>
+      <p>Smart contract adalah kode yang berjalan otomatis di blockchain untuk mengeksekusi kesepakatan tanpa perantara.</p>
+    </div>
+    <div class="slide" id="slide4">
+      <h2>4. Apa peran token di Web 3?</h2>
+      <p>Token digunakan untuk insentif, akses layanan, dan tata kelola dalam ekosistem Web 3.</p>
+    </div>
+    <div class="slide" id="slide5">
+      <h2>5. Apa itu DAO?</h2>
+      <p>DAO (Decentralized Autonomous Organization) adalah organisasi yang dikelola oleh kode dan komunitas melalui voting berbasis token.</p>
+    </div>
+    <!-- Tambahkan hingga #slide35 sesuai kebutuhan -->
   </div>
 
-  <!-- Navigasi manual -->
+  <!-- Navigasi slide -->
   <div class="nav">
     <label for="s1"></label>
     <label for="s2"></label>
     <label for="s3"></label>
-    <!-- ... up to s35 -->
-    <label for="s35"></label>
+    <label for="s4"></label>
+    <label for="s5"></label>
+    <!-- Tambahkan hingga s35 jika semua mau dibuat -->
   </div>
-</form>
 
 </body>
 </html>
