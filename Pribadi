@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web 3 Q&A Slides</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .slider {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 15px;
+      background: #222;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .slides {
+      display: flex;
+      width: 3500%; /* 35 slides */
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      padding: 2rem;
+      box-sizing: border-box;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .nav {
+      margin-top: 20px;
+    }
+
+    .nav label {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #555;
+      margin: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input:checked ~ .slider .slides {
+      transform: translateX(calc(var(--i) * -100%));
+    }
+
+    input:checked ~ .slider .slide:nth-of-type(var(--i)) {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Make only active slide visible */
+    input:nth-of-type(1):checked ~ .slider .slide:nth-of-type(1),
+    input:nth-of-type(2):checked ~ .slider .slide:nth-of-type(2),
+    input:nth-of-type(3):checked ~ .slider .slide:nth-of-type(3),
+    /* ... add until 35 */
+    input:nth-of-type(35):checked ~ .slider .slide:nth-of-type(35) {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    input:checked + label {
+      background: #0f0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Generate 35 radio buttons -->
+<form>
+  <!-- Radio buttons with manual index-based CSS handling -->
+  <!-- You may automate this with a script or preprocessor in production -->
+
+  <!-- 35 Inputs -->
+  <!-- We'll just show 3 for demo, you can continue the rest similarly -->
+  <input type="radio" name="slider" id="s1" checked style="--i:0">
+  <input type="radio" name="slider" id="s2" style="--i:1">
+  <input type="radio" name="slider" id="s3" style="--i:2">
+  <!-- ... up to 35 -->
+  <input type="radio" name="slider" id="s35" style="--i:34">
+
+  <div class="slider">
+    <div class="slides">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <h2>1. Apa itu Web 3?</h2>
+        <p>Web 3 adalah evolusi internet yang berbasis teknologi blockchain, memungkinkan kontrol data oleh pengguna.</p>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <h2>2. Apa perbedaan Web 2 dan Web 3?</h2>
+        <p>Web 2 dikendalikan oleh platform besar, sedangkan Web 3 lebih terdesentralisasi dan memberi pengguna kendali atas data mereka.</p>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <h2>3. Apa itu blockchain dalam konteks Web 3?</h2>
+        <p>Blockchain adalah teknologi inti Web 3 yang menyimpan data secara aman, transparan, dan terdistribusi.</p>
+      </div>
+      <!-- ... Tambahkan hingga 35 slide -->
+    </div>
+  </div>
+
+  <!-- Navigasi manual -->
+  <div class="nav">
+    <label for="s1"></label>
+    <label for="s2"></label>
+    <label for="s3"></label>
+    <!-- ... up to s35 -->
+    <label for="s35"></label>
+  </div>
+</form>
+
+</body>
+</html>
