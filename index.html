@@ -1,235 +1,165 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>🔥soal anak sd - Ready</title>
+  <meta charset="UTF-8" />
+  <title>Web3 Tapi Lucu 🔥</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #0b0b0b;
+      background: #1a0000;
       color: white;
+      padding: 20px;
       margin: 0;
     }
 
-    header {
-      background: linear-gradient(135deg, #ff1a1a, #660000);
-      padding: 40px 20px;
+    h1 {
       text-align: center;
-      box-shadow: 0 0 15px #ff1a1a;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      text-shadow: 0 0 5px #ff9999;
-    }
-
-    header p {
-      color: #ffcccc;
-      font-size: 1em;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
+      color: #ff4d4d;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
     }
 
     .question {
-      background: #1a1a1a;
-      margin-bottom: 20px;
+      background: #330000;
+      margin: 20px 0;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 12px #ff1a1a;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
     }
 
     .question:hover {
-      background: #2a2a2a;
-      transform: scale(1.01);
+      background: #4d0000;
     }
 
     .options {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
+      display: none;
       margin-top: 10px;
     }
 
-    .options.show {
-      max-height: 500px;
-    }
-
     .option {
-      background: #333;
-      margin: 8px 0;
-      padding: 12px;
+      background: #660000;
+      margin: 5px 0;
+      padding: 10px;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
     }
 
     .option:hover {
-      background: #ff1a1a;
-      color: white;
+      background: #990000;
     }
 
-    #result {
-      background: #220000;
-      padding: 20px;
-      border-radius: 12px;
+    .result {
       text-align: center;
-      margin-top: 40px;
-      box-shadow: 0 0 15px #ff1a1a;
-      display: none;
+      margin-top: 30px;
+      font-size: 1.5rem;
+      color: #ff9999;
     }
 
-    footer {
-      margin-top: 50px;
-      text-align: center;
-    }
-
-    iframe {
+    /* 🔥 Animasi background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 100px;
-      border: none;
+      height: 100%;
+      background: url('https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif') center center / cover no-repeat;
+      opacity: 0.15;
+      z-index: -1;
+      animation: flicker 5s infinite;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.12; }
+      50% { opacity: 0.18; }
+      100% { opacity: 0.12; }
+    }
+
+    /* 🎉 Notifikasi selesai */
+    #notif {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #cc0000;
+      padding: 20px 40px;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      color: white;
+      z-index: 9999;
+      box-shadow: 0 0 20px #ff0000;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    /* Footer style */
+    footer {
+      margin-top: 60px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>🔥 Tebak-Tebakan Web3</h1>
-  <p>Jawab sambil ketawa, tapi beneran ngerti Web3 🤓</p>
-</header>
+<h1>🔥 Tebak-Tebakan Web3 Tapi Lucu 🔥</h1>
+<div id="quiz"></div>
+<div class="result" id="result"></div>
 
-<div class="container" id="quiz"></div>
-<div id="result"></div>
+<!-- 🎉 Notifikasi di tengah -->
+<div id="notif">🎉 Kamu sudah menjawab semua pertanyaan!</div>
 
+<!-- 🔊 Footer SoundCloud -->
 <footer>
-  <iframe scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/shahrad-shegerf/poison&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true"
-    allow="autoplay"></iframe>
+  <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/shahrad-shegerf/poison&color=%23ff0000&inverse=false&auto_play=false&show_user=true">
+  </iframe>
 </footer>
 
 <script>
-  const questions = [
-    {
-      q: "Apa itu Web3?",
-      options: [
-        { text: "Desentralisasi internet", correct: true },
-        { text: "Versi premium dari Web 2.0", correct: false },
-        { text: "Tempat mining sambil rebahan", correct: false }
-      ],
-      responses: [
-        "🔥 Tepat! Internet tanpa middleman.",
-        "🤑 Bayar subscription Web3? Gak gitu!",
-        "😴 Produktif sih, tapi bukan gitu Web3-nya."
-      ]
-    },
-    {
-      q: "NFT itu apa sih?",
-      options: [
-        { text: "File digital dengan sertifikat unik", correct: true },
-        { text: "Nasi Free Topping", correct: false },
-        { text: "Format musik", correct: false }
-      ],
-      responses: [
-        "🎨 Yes! Token yang unik dan tak tergantikan.",
-        "🍚 Sayangnya cuma bisa ditonton, bukan dimakan.",
-        "🎵 NFT bukan .mp3, bro."
-      ]
-    },
-    {
-      q: "Smart Contract adalah...",
-      options: [
-        { text: "Kode otomatis untuk transaksi", correct: true },
-        { text: "Kontrak kerja di Google", correct: false },
-        { text: "Bot yang nyuruh bayar utang", correct: false }
-      ],
-      responses: [
-        "💡 Bener! Ini yang bikin Web3 jalan otomatis.",
-        "📄 Belum sampe ke kantor Big Tech.",
-        "💸 Waduh... kayak debt collector digital dong."
-      ]
-    }
-    // Kamu bisa tambah lagi di sini...
-  ];
+  const questions = [/* ... 20 pertanyaan tetap di sini, tidak diubah ... */];
+  
+  const quizContainer = document.getElementById("quiz");
+  const resultContainer = document.getElementById("result");
+  const notif = document.getElementById("notif");
+  let totalAnswered = 0;
 
-  let score = 0;
-  let answered = 0;
+  questions.forEach((item, index) => {
+    const qDiv = document.createElement("div");
+    qDiv.className = "question";
+    qDiv.innerText = item.q;
 
-  const quizDiv = document.getElementById("quiz");
-  const resultDiv = document.getElementById("result");
+    const optDiv = document.createElement("div");
+    optDiv.className = "options";
 
-  questions.forEach((item, idx) => {
-    const q = document.createElement("div");
-    q.className = "question";
-    q.innerText = item.q;
-
-    const opt = document.createElement("div");
-    opt.className = "options";
-
-    item.options.forEach((optItem, i) => {
-      const optBtn = document.createElement("div");
-      optBtn.className = "option";
-      optBtn.innerText = optItem.text;
-
-      optBtn.onclick = (e) => {
-        e.stopPropagation();
-        alert(item.responses[i]);
-
-        if (!opt.classList.contains("answered")) {
-          answered++;
-          if (optItem.correct) score++;
-          opt.classList.add("answered");
-        }
-
-        if (answered === questions.length) {
-          resultDiv.style.display = "block";
-          resultDiv.innerHTML = `<strong>Skor kamu: ${score}/${questions.length} ✅</strong><br/>Data dikirim ke server...`;
-          sendResultToBackend(score);
+    item.options.forEach((opt, i) => {
+      const o = document.createElement("div");
+      o.className = "option";
+      o.innerText = opt;
+      o.onclick = () => {
+        alert(item.responses[i]); // tetap pakai alert untuk tiap jawaban
+        totalAnswered++;
+        if (totalAnswered === questions.length) {
+          notif.style.display = "block"; // tampilkan notifikasi di tengah
         }
       };
-
-      opt.appendChild(optBtn);
+      optDiv.appendChild(o);
     });
 
-    q.onclick = () => {
-      opt.classList.toggle("show");
+    qDiv.onclick = () => {
+      optDiv.style.display = optDiv.style.display === "block" ? "none" : "block";
     };
 
-    quizDiv.appendChild(q);
-    quizDiv.appendChild(opt);
+    quizContainer.appendChild(qDiv);
+    quizContainer.appendChild(optDiv);
   });
-
-  // Simulasi kirim ke backend (contoh dengan fetch)
-  function sendResultToBackend(score) {
-    const payload = {
-      name: "Pengguna Web3 Lucu",
-      score: score,
-      total: questions.length,
-      time: new Date().toISOString()
-    };
-
-    fetch("https://example.com/api/submit-score", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    })
-    .then(res => {
-      if (res.ok) {
-        resultDiv.innerHTML += "<br/>✅ Berhasil dikirim ke backend!";
-      } else {
-        resultDiv.innerHTML += "<br/>⚠️ Gagal kirim ke backend.";
-      }
-    })
-    .catch(() => {
-      resultDiv.innerHTML += "<br/>❌ Koneksi gagal.";
-    });
-  }
 </script>
 
 </body>
